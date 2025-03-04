@@ -1,33 +1,35 @@
-import "./App.css";
-import Navbar from "./components/Navbar";
-import Basketball from "./pages/Basketball";
-import Cricket from "./pages/Cricket"
-import { BrowserRouter, Router, Routes, Route } from "react-router-dom";
-import Football from "./pages/Football";
-import Rugby from "./pages/Rugby";
-import Baseball from "./pages/Baseball";
-import Home from "./components/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
 function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <div>
-      <BrowserRouter>
-      <Navbar/>
-      <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/cricket" element={<Cricket/>}/>
-          <Route path="/football" element={<Football/>}/>
-          <Route path="/basketball" element={<Basketball/>}/>
-          <Route path="/rugby" element={<Rugby/>}/>
-          <Route path="/baseball" element={<Baseball/>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/signup" element={<Signup/>}/>
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
 }
 
-export default App;
+export default App
