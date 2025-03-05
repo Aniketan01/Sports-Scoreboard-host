@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "/logo-transparent.png";
+import logo from "../assets/images/logos/logo-transparent.png";
 
 export default function Navbar() {
   return (
@@ -18,27 +18,27 @@ export default function Navbar() {
             <ul className="navbar-nav d-flex justify-content-center w-100">
               <li className="nav-item">
                 <Link className="nav-link" to="/cricket">
-                  Cricket
+                  <strong>Cricket</strong>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/football">
-                  Football
+                  <strong>Football</strong>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/basketball">
-                  Basketball
+                  <strong>Basketball</strong>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/baseball">
-                  Baseball
+                  <strong>Baseball</strong>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/rugby">
-                  Rugby
+                  <strong>Rugby</strong>
                 </Link>
               </li>
             </ul>
@@ -46,12 +46,12 @@ export default function Navbar() {
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/login">
-                  Login
+                  <strong>Login</strong>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/signup">
-                  Signup
+                  <strong>Signup</strong>
                 </Link>
               </li>
             </ul>

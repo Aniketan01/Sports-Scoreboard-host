@@ -1,9 +1,9 @@
 body {
     background-color: #E0E0E0; /* Light Grey */
+    font-family: 'Roboto', sans-serif;
   }
   
   .navbar {
     background-color: white !important;
     border-bottom: 2px solid #ddd;
   }
-  
