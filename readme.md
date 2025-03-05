@@ -1,0 +1,1 @@
+This is a simple project that shows scoreboard of the sports
