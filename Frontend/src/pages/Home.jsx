@@ -1,7 +1,4 @@
 import React from 'react';
-import Lakers from '../assets/images/Basketball/Lakers.png'
-import Clippers from '../assets/images/Basketball/Clippers.png'
-import Bulls from "../assets/images/Basketball/Bulls.png"
 import Basketball from './Home/Basketball-Home';
 import Rugby from './Home/Rugby-Home';
 import Football from './Home/Football-Home';
@@ -60,7 +57,7 @@ export default function Home() {
                     </div>
 
                     <div className="card mt-3 p-3">
-                        <h4>Live Matches</h4>
+                        <h4>Matches</h4>
                         <br />&nbsp;
                         <Cricket/>
                         <hr />
