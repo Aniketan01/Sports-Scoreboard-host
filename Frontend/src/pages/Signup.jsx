@@ -9,7 +9,8 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/signup", formData);
+      await axios.post("https://sports-scoreboard-host.onrender.com/api/auth/signup", formData);
+
       alert("Signup successful! Now login.");
     } catch (err) {
       alert("Signup failed! User may already exist.");
