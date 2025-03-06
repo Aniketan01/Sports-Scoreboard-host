@@ -16,15 +16,17 @@ const Rugby = () => {
 
   return (
     <div className="container mt-4">
-      <h2 className="mb-4">NFL Matches</h2>
+      <h2 className="mb-4 text-center">NFL Matches</h2>
       <div className="row">
         {games.map((game, index) => (
           <div key={index} className="col-md-4 mb-4">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">{game.home_team.full_name} vs {game.visitor_team.full_name}</h5>
-                <p className="card-text">Score: {game.home_team_score} - {game.visitor_team_score}</p>
-                <p className="card-text">Status: {game.status}</p>
+            <div className="card shadow-sm">
+              <div className="card-header text-center fw-bold">
+                {game.home_team.full_name} vs {game.visitor_team.full_name}
+              </div>
+              <div className="card-body text-center">
+                <p><strong>Score:</strong> {game.home_team_score} - {game.visitor_team_score}</p>
+                <p className="text-muted">{game.status}</p>
               </div>
             </div>
           </div>
@@ -35,4 +37,3 @@ const Rugby = () => {
 };
 
 export default Rugby;
-

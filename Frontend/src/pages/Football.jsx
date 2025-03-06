@@ -15,15 +15,17 @@ const Football = () => {
 
   return (
     <div className="container mt-4">
-      <h2 className="mb-4">Football Matches</h2>
+      <h2 className="mb-4 text-center">Football Matches</h2>
       <div className="row">
         {matches.map((match, index) => (
           <div key={index} className="col-md-4 mb-4">
-            <div className="card">
-              <div className="card-body">
-                <h4 className="card-title"><strong>{match.teams.home.name} vs {match.teams.away.name}</strong></h4>
-                <strong><p className="card-text">Score: {match.goals.home ?? "-"} - {match.goals.away ?? "-"}</p></strong>
-                <h6 className="card-text">Date: {new Date(match.fixture.date).toLocaleString()}</h6>
+            <div className="card shadow-sm">
+              <div className="card-header text-center fw-bold">
+                {match.teams.home.name} vs {match.teams.away.name}
+              </div>
+              <div className="card-body text-center">
+                <p><strong>Score:</strong> {match.goals.home ?? "-"} - {match.goals.away ?? "-"}</p>
+                <p className="text-muted">Date: {new Date(match.fixture.date).toLocaleString()}</p>
               </div>
             </div>
           </div>
