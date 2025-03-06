@@ -35,3 +35,4 @@ const Rugby = () => {
 };
 
 export default Rugby;
+
