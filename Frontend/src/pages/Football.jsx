@@ -15,23 +15,19 @@ const Football = () => {
 
   return (
     <div className="container mt-4">
-      <h2 className="mb-3">Football Matches</h2>
+      <h2 className="mb-4">Football Matches</h2>
       <div className="row">
-        {matches.length > 0 ? (
-          matches.map((match) => (
-            <div key={match.fixture.id} className="col-md-6 mb-3">
-              <div className="card p-3">
-                <h5>{match.teams.home.name} vs {match.teams.away.name}</h5>
-                <p>
-                  Score: {match.goals.home ?? "-"} - {match.goals.away ?? "-"}
-                </p>
-                <p>Date: {new Date(match.fixture.date).toLocaleString()}</p>
+        {matches.map((match, index) => (
+          <div key={index} className="col-md-4 mb-4">
+            <div className="card">
+              <div className="card-body">
+                <h4 className="card-title"><strong>{match.teams.home.name} vs {match.teams.away.name}</strong></h4>
+                <strong><p className="card-text">Score: {match.goals.home ?? "-"} - {match.goals.away ?? "-"}</p></strong>
+                <h6 className="card-text">Date: {new Date(match.fixture.date).toLocaleString()}</h6>
               </div>
             </div>
-          ))
-        ) : (
-          <p>No matches available</p>
-        )}
+          </div>
+        ))}
       </div>
     </div>
   );

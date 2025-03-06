@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const CricketSeries = () => {
+const Cricket = () => {
   const [series, setSeries] = useState([]);
 
   useEffect(() => {
@@ -33,4 +33,4 @@ const CricketSeries = () => {
   );
 };
 
-export default CricketSeries;
+export default Cricket;
