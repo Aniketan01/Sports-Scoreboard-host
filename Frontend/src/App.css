@@ -3,7 +3,15 @@ body {
     font-family: 'Roboto', sans-serif;
   }
   
-  .navbar {
-    background-color: white !important;
-    border-bottom: 2px solid #ddd;
-  }
+
+.navbar {
+  background-color: white !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Light Grey Background Below Navbar */
+.content {
+  background-color: #f5f5f5; /* Light grey */
+  min-height: 100vh;
+  padding: 20px; /* Adjust padding if needed */
+}

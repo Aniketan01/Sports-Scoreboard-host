@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const logo = "https://media-hosting.imagekit.io//1e3d5fe3fc6a4e44/logo-transparent.png?Expires=1835849925&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=aNdKLvFmlqxZnN-n8TlQm5VOfRGirzngMzl0cR03tbdI9~kBGUWzwpWsp63ygCJMejVu48lCGb1HZmoLYxMw-X2TvOaipfwb1AX35aohi8qAsATlt2ickVuKW0IkhBjIUatFJIBQFHC-HJXbQ8QNqtmNeftRIMZAP04fmzHLsbktDDRL1dTBheePCHXCB~aIVQnWyjdhcBETTmnV6vd86jFmcwfpEKv8Bx0-sJRZeGt7-iZL5mr0kEJ5SBFA-kMCznRqFqVKRSEgtv1dqdb4L4cyeUFyBpxrSAibPmLvglGLgJnPSpppEsXPh~NUDCoB4H6FMow23P9uSNNSLGswqw__";
 
 export default function Navbar() {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -16,6 +17,7 @@ export default function Navbar() {
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(null);
+    navigate("/"); // Redirect to login page
     window.location.reload();
   };
 
@@ -23,7 +25,7 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <img src={logo} alt="logo" height={"75px"} />
+          <img src={logo} alt="logo" height="75px" />
         </Link>
 
         <button
@@ -39,23 +41,25 @@ export default function Navbar() {
         </button>
 
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-          <ul className="navbar-nav d-flex justify-content-center w-100">
-            <li className="nav-item">
-              <Link className="nav-link" to="/cricket"><strong>Cricket</strong></Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/football"><strong>Football</strong></Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/basketball"><strong>Basketball</strong></Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/baseball"><strong>Baseball</strong></Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/rugby"><strong>Rugby</strong></Link>
-            </li>
-          </ul>
+          {user && ( // Only show sports links if user is logged in
+            <ul className="navbar-nav d-flex justify-content-center w-100">
+              <li className="nav-item">
+                <Link className="nav-link" to="/cricket"><strong>Cricket</strong></Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/football"><strong>Football</strong></Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/basketball"><strong>Basketball</strong></Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/baseball"><strong>Baseball</strong></Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/rugby"><strong>Rugby</strong></Link>
+              </li>
+            </ul>
+          )}
 
           <ul className="navbar-nav ms-auto">
             {user ? (
