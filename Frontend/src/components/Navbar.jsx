@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/images/logos/logo-transparent.png";
+
+const logo="https://media-hosting.imagekit.io//1e3d5fe3fc6a4e44/logo-transparent.png?Expires=1835849925&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=aNdKLvFmlqxZnN-n8TlQm5VOfRGirzngMzl0cR03tbdI9~kBGUWzwpWsp63ygCJMejVu48lCGb1HZmoLYxMw-X2TvOaipfwb1AX35aohi8qAsATlt2ickVuKW0IkhBjIUatFJIBQFHC-HJXbQ8QNqtmNeftRIMZAP04fmzHLsbktDDRL1dTBheePCHXCB~aIVQnWyjdhcBETTmnV6vd86jFmcwfpEKv8Bx0-sJRZeGt7-iZL5mr0kEJ5SBFA-kMCznRqFqVKRSEgtv1dqdb4L4cyeUFyBpxrSAibPmLvglGLgJnPSpppEsXPh~NUDCoB4H6FMow23P9uSNNSLGswqw__";
 
 export default function Navbar() {
   return (
@@ -10,6 +11,7 @@ export default function Navbar() {
           <Link className="navbar-brand" to="/">
             <img src={logo} alt="logo" height={"75px"} />
           </Link>
+          
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"aria-expanded="false"aria-label="Toggle navigation">
 
             <span className="navbar-toggler-icon"></span>
