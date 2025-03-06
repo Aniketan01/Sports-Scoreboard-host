@@ -24,7 +24,7 @@ export default function Home() {
 
                         <div className="d-flex justify-content-between align-items-center">
                             <div className='col-lg-4 text-start'><span>🇿🇦 South Africa</span></div>
-                            <div className='col-lg-4 text-center'><strong>267/6&nbsp;-&nbsp;264/10</strong></div>
+                            <div className='col-lg-4 text-center'><strong>312/9&nbsp;-&nbsp;362/6</strong></div>
                             <div className='col-lg-4 text-end'><span>New Zealand 🇳🇿</span></div>
                         </div>
                         <br /><br /><br />&nbsp;
@@ -33,7 +33,7 @@ export default function Home() {
                         <div className="d-flex justify-content-between align-items-center">
                             <div className='col-lg-4 text-start'><span>🇮🇳 India</span></div>
                             <div className='col-lg-4 text-center'><strong>&nbsp;9 March&nbsp;</strong></div>
-                            <div className='col-lg-4 text-end'><span>TBD</span></div>
+                            <div className='col-lg-4 text-end'><span>New Zealand 🇳🇿</span></div>
                         </div>
                     </div>
 
