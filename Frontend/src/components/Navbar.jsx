@@ -17,9 +17,32 @@ export default function Navbar() {
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(null);
-    navigate("/"); // Redirect to login page
+    navigate("/"); // Redirect to home
     window.location.reload();
   };
+
+  const handleSportClick = async (sport) => {
+    if (!user) return;
+  
+    try {
+      const response = await fetch("http://localhost:5000/api/user/select-sport", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: user.email, sport }),
+      });
+  
+      const data = await response.json();
+      if (response.ok) {
+        console.log("Updated sports list:", data.selectedSports);
+      } else {
+        console.error("Error selecting sport:", data.message);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+  
+  
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -43,21 +66,17 @@ export default function Navbar() {
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
           {user && ( // Only show sports links if user is logged in
             <ul className="navbar-nav d-flex justify-content-center w-100">
-              <li className="nav-item">
-                <Link className="nav-link" to="/cricket"><strong>Cricket</strong></Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/football"><strong>Football</strong></Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/basketball"><strong>Basketball</strong></Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/baseball"><strong>Baseball</strong></Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/rugby"><strong>Rugby</strong></Link>
-              </li>
+              {["Cricket", "Football", "Basketball", "Baseball", "Rugby"].map((sport) => (
+                <li className="nav-item" key={sport}>
+                  <Link
+                    className="nav-link"
+                    to={`/${sport.toLowerCase()}`}
+                    onClick={() => handleSportClick(sport)}
+                  >
+                    <strong>{sport}</strong>
+                  </Link>
+                </li>
+              ))}
             </ul>
           )}
 
