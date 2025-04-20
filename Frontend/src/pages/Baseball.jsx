@@ -8,7 +8,7 @@ const Baseball = () => {
     axios
       .get("https://v1.baseball.api-sports.io/games", {
         headers: {
-          "x-apisports-key": import.meta.env.VITE_BASEBALL_API_KEY,
+          "x-apisports-key": import.meta.env.BASEBALL_API_KEY,
         },
         params: { league: 1, season: 2023 },
       })

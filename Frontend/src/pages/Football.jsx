@@ -8,7 +8,7 @@ const Football = () => {
     axios
       .get("https://v3.football.api-sports.io/fixtures", {
         headers: {
-          "x-apisports-key": import.meta.env.VITE_FOOTBALL_API_KEY,
+          "x-apisports-key": import.meta.env.FOOTBALL_API_KEY,
         },
         params: {
           league: 39, // Premier League

@@ -6,7 +6,7 @@ const Rugby = () => {
   useEffect(() => {
     fetch("https://api.balldontlie.io/nfl/v1/games", {
       headers: {
-        Authorization: import.meta.env.VITE_RUGBY_API_KEY,  // Directly use the API key from .env
+        Authorization: import.meta.env.RUGBY_API_KEY,  // Directly use the API key from .env
       },
     })
       .then((response) => response.json())
