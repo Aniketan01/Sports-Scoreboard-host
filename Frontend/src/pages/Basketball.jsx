@@ -6,7 +6,7 @@ const Basketball = () => {
   useEffect(() => {
     fetch("https://api.balldontlie.io/v1/games", {
       headers: {
-        Authorization: "2f7adaeb-280a-40cd-85f1-a32ec46661d3",
+        Authorization: import.meta.env.VITE_BASKETBALL_API_KEY,
       },
     })
       .then((response) => response.json())

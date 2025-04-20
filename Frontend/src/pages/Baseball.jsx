@@ -7,7 +7,9 @@ const Baseball = () => {
   useEffect(() => {
     axios
       .get("https://v1.baseball.api-sports.io/games", {
-        headers: { "x-apisports-key": "d236dc816f53fad5c2b27fa586a8e00b" },
+        headers: {
+          "x-apisports-key": import.meta.env.VITE_BASEBALL_API_KEY,
+        },
         params: { league: 1, season: 2023 },
       })
       .then((response) => setMatches(response.data.response))

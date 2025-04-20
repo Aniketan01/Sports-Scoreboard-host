@@ -7,8 +7,7 @@ const Cricket = () => {
   useEffect(() => {
     axios
       .get("https://api.cricapi.com/v1/series", {
-        params: { apikey: "bf015aed-4b2c-4dfc-8c64-dc48fab54c49" },
-        //e8d608da-0d15-44e3-a070-e9dba9efaa51 another api
+        params: { apikey: import.meta.env.VITE_CRICKET_API_KEY },
       })
       .then(({ data }) => setSeries(data?.data || []))
       .catch(() => console.error("Cannot retrieve series data"));

@@ -6,10 +6,18 @@ const Football = () => {
 
   useEffect(() => {
     axios
-      .get("https://v3.football.api-sports.io/fixtures?league=39&season=2023", {
-        headers: { "x-apisports-key": "d236dc816f53fad5c2b27fa586a8e00b" },
+      .get("https://v3.football.api-sports.io/fixtures", {
+        headers: {
+          "x-apisports-key": import.meta.env.VITE_FOOTBALL_API_KEY,
+        },
+        params: {
+          league: 39, // Premier League
+          season: 2023,
+        },
       })
-      .then((res) => setMatches(Array.isArray(res.data.response) ? res.data.response.slice(0, 20) : []))
+      .then((res) =>
+        setMatches(Array.isArray(res.data.response) ? res.data.response.slice(0, 20) : [])
+      )
       .catch((err) => console.error("Error fetching matches:", err));
   }, []);
 
